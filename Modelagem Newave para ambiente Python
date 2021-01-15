@@ -18,69 +18,13 @@
     {
       "cell_type": "code",
       "metadata": {
-        "id": "OpOGHwEQrXK-",
-        "colab": {
-          "base_uri": "https://localhost:8080/",
-          "height": 609
-        },
-        "outputId": "22050b3b-ced0-489b-9982-efce83c7b450"
+        "id": "OpOGHwEQrXK-"
       },
       "source": [
         "!pip install PySDDP==0.0.23"
       ],
-      "execution_count": 1,
-      "outputs": [
-        {
-          "output_type": "stream",
-          "text": [
-            "Collecting PySDDP==0.0.23\n",
-            "\u001b[?25l  Downloading https://files.pythonhosted.org/packages/77/58/4d0b22898c7403f539a18b26ac46cee8a1b0e7eeccaa47afd9f25d850e44/PySDDP-0.0.23-py3-none-any.whl (162kB)\n",
-            "\r\u001b[K     |██                              | 10kB 16.3MB/s eta 0:00:01\r\u001b[K     |████                            | 20kB 21.8MB/s eta 0:00:01\r\u001b[K     |██████                          | 30kB 11.8MB/s eta 0:00:01\r\u001b[K     |████████                        | 40kB 9.3MB/s eta 0:00:01\r\u001b[K     |██████████                      | 51kB 4.4MB/s eta 0:00:01\r\u001b[K     |████████████                    | 61kB 5.0MB/s eta 0:00:01\r\u001b[K     |██████████████                  | 71kB 5.1MB/s eta 0:00:01\r\u001b[K     |████████████████                | 81kB 5.5MB/s eta 0:00:01\r\u001b[K     |██████████████████▏             | 92kB 5.5MB/s eta 0:00:01\r\u001b[K     |████████████████████▏           | 102kB 4.2MB/s eta 0:00:01\r\u001b[K     |██████████████████████▏         | 112kB 4.2MB/s eta 0:00:01\r\u001b[K     |████████████████████████▏       | 122kB 4.2MB/s eta 0:00:01\r\u001b[K     |██████████████████████████▏     | 133kB 4.2MB/s eta 0:00:01\r\u001b[K     |████████████████████████████▏   | 143kB 4.2MB/s eta 0:00:01\r\u001b[K     |██████████████████████████████▏ | 153kB 4.2MB/s eta 0:00:01\r\u001b[K     |████████████████████████████████| 163kB 4.2MB/s \n",
-            "\u001b[?25hCollecting pyswarm\n",
-            "  Downloading https://files.pythonhosted.org/packages/79/1e/254c108b5e65c65d57a83a9a448405ea8b6a6c5c10dada8bcab4e9d9a831/pyswarm-0.6.tar.gz\n",
-            "Requirement already satisfied: matplotlib in /usr/local/lib/python3.6/dist-packages (from PySDDP==0.0.23) (3.2.2)\n",
-            "Requirement already satisfied: scipy in /usr/local/lib/python3.6/dist-packages (from PySDDP==0.0.23) (1.4.1)\n",
-            "Requirement already satisfied: numpy in /usr/local/lib/python3.6/dist-packages (from PySDDP==0.0.23) (1.19.5)\n",
-            "Requirement already satisfied: pandas in /usr/local/lib/python3.6/dist-packages (from PySDDP==0.0.23) (1.1.5)\n",
-            "Collecting typing\n",
-            "\u001b[?25l  Downloading https://files.pythonhosted.org/packages/05/d9/6eebe19d46bd05360c9a9aae822e67a80f9242aabbfc58b641b957546607/typing-3.7.4.3.tar.gz (78kB)\n",
-            "\u001b[K     |████████████████████████████████| 81kB 6.3MB/s \n",
-            "\u001b[?25hRequirement already satisfied: cvxopt in /usr/local/lib/python3.6/dist-packages (from PySDDP==0.0.23) (1.2.5)\n",
-            "Requirement already satisfied: python-dateutil>=2.1 in /usr/local/lib/python3.6/dist-packages (from matplotlib->PySDDP==0.0.23) (2.8.1)\n",
-            "Requirement already satisfied: kiwisolver>=1.0.1 in /usr/local/lib/python3.6/dist-packages (from matplotlib->PySDDP==0.0.23) (1.3.1)\n",
-            "Requirement already satisfied: cycler>=0.10 in /usr/local/lib/python3.6/dist-packages (from matplotlib->PySDDP==0.0.23) (0.10.0)\n",
-            "Requirement already satisfied: pyparsing!=2.0.4,!=2.1.2,!=2.1.6,>=2.0.1 in /usr/local/lib/python3.6/dist-packages (from matplotlib->PySDDP==0.0.23) (2.4.7)\n",
-            "Requirement already satisfied: pytz>=2017.2 in /usr/local/lib/python3.6/dist-packages (from pandas->PySDDP==0.0.23) (2018.9)\n",
-            "Requirement already satisfied: six>=1.5 in /usr/local/lib/python3.6/dist-packages (from python-dateutil>=2.1->matplotlib->PySDDP==0.0.23) (1.15.0)\n",
-            "Building wheels for collected packages: pyswarm, typing\n",
-            "  Building wheel for pyswarm (setup.py) ... \u001b[?25l\u001b[?25hdone\n",
-            "  Created wheel for pyswarm: filename=pyswarm-0.6-cp36-none-any.whl size=4481 sha256=055f066141bb29c5fd5120255fba932c30d8084f6934e32fe1c81bc4ee3f1e68\n",
-            "  Stored in directory: /root/.cache/pip/wheels/37/c5/f6/b33b9ac00040cb95c1f00af982a4197334a672d6de43f4699f\n",
-            "  Building wheel for typing (setup.py) ... \u001b[?25l\u001b[?25hdone\n",
-            "  Created wheel for typing: filename=typing-3.7.4.3-cp36-none-any.whl size=26310 sha256=62fe19cd9c0bbadddd85165e2cec0023a5df91e96bddd450123cd5cc22250e15\n",
-            "  Stored in directory: /root/.cache/pip/wheels/2d/04/41/8e1836e79581989c22eebac3f4e70aaac9af07b0908da173be\n",
-            "Successfully built pyswarm typing\n",
-            "Installing collected packages: pyswarm, typing, PySDDP\n",
-            "Successfully installed PySDDP-0.0.23 pyswarm-0.6 typing-3.7.4.3\n"
-          ],
-          "name": "stdout"
-        },
-        {
-          "output_type": "display_data",
-          "data": {
-            "application/vnd.colab-display-data+json": {
-              "pip_warning": {
-                "packages": [
-                  "typing"
-                ]
-              }
-            }
-          },
-          "metadata": {
-            "tags": []
-          }
-        }
-      ]
+      "execution_count": null,
+      "outputs": []
     },
     {
       "cell_type": "code",
